@@ -8,7 +8,7 @@ exports.login = (req,res)=>{
         const token = jwt.sign({username},process.env.JWT_SECRET,{expiresIn:'30m'})
         return res.json({token,username})
     }else{
-        return res.status(400).json({error:'Wrong Password'})
+        return res.status(400).json({error:'Usernam or Password is invalid'})
     }
 }
 
